@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biblioteca UFC</title>
+</head>
+<body>
+    <h1>Livros disponíveis  para Empréstimo</h1>
+    <div id="livrosDisponiveis"></div>
+
+    <script>
+        // Array original dos livros
+        const livros = [
+            { titulo: "JavaScript para Iniciantes", autor: "João Silva", disponivel: true },
+            { titulo: "CSS Avançado", autor: "Maria Oliveira", disponivel: false },
+            { titulo: "React Rápido", autor: "Ana Souza", disponivel: true }
+        ];
+
+        // Filtrar apenas os livros disponíveis
+        const livrosDisponiveis = livros.filter(function(livro) {
+            return livro.disponivel === true;
+        });
+
+        // Exibir os livros disponíveis no navegador
+        const saida = document.getElementById("livrosDisponiveis");
+
+        livrosDisponiveis.forEach(function(livro, index) {
+            saida.innerHTML += `
+                <p>
+                    Título: ${livro.titulo}<br>
+                    Autor: ${livro.autor}
+                </p>
+            `;
+        });
+    </script>
+</body>
+</html>
