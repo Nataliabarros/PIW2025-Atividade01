@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendas Q'Tec</title>
+</head>
+<body>
+    <h1>Relatório Financeiro da Q'Tec</h1>
+    <div id="resultado"></div>
+
+    <script>
+        const vendas = [
+            { produto: "Notebook", preco: 2500, quantidade: 2 },
+            { produto: "Smartphone", preco: 1500, quantidade: 3 },
+            { produto: "Teclado", preco: 200, quantidade: 5 },
+        ];
+
+        // Calcula o valor total das vendas usando reduce
+        const totalVendas = vendas.reduce(function(soma, item) {
+            return soma + (item.preco * item.quantidade);
+        }, 0);
+
+        // Exibe o resultado no navegador
+        const resultado = document.getElementById("resultado");
+        
+        resultado.innerHTML = `Valor total das vendas: R$ ${totalVendas.toFixed(2)}`;
+    </script>
+</body>
+</html>
