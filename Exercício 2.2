@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produtos com Desconto</title>
+</head>
+<body>
+    <h1>Lista de Produtos com Desconto</h1>
+    <div id="produtos"></div>
+
+    <script>
+        // Array de produtos original
+        const produtos = [
+            { nome: 'Camiseta', preco: 50 },
+            { nome: 'Calca', preco: 100 },
+            { nome: 'Tenis', preco: 200 }
+        ];
+
+        // Criando novo array com precoComDesconto (10% de desconto)
+        const produtosComDesconto = produtos.map(function(produto) {
+            return {
+                ...produto,
+                precoComDesconto: produto.preco * 0.9
+            };
+        });
+
+        // Mostrando os produtos no navegador
+        const saida = document.getElementById("produtos");
+
+        produtosComDesconto.forEach(function(produto, index) {
+            saida.innerHTML += `
+                <p>
+                   
+                    Produto: ${produto.nome}<br>
+                    Preco original: R$ ${produto.preco.toFixed(2)}<br>
+                    Preco com desconto: <span style="color: blue;">R$ ${produto.precoComDesconto.toFixed(2)}</span>
+                </p>
+            `;
+        });
+    </script>
+</body>
+</html>
