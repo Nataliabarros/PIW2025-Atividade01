@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade 1.1</title>
+</head>
+<body>
+    <h1>Array com 30 posicoes</h1>
+    <div id="array"></div>
+
+    <script>
+        // Criando o array com 30 posições
+        let meuArray = [];
+
+        // Preenchendo o array com o índice + 23
+        for (let i = 0; i < 30; i++) {
+            meuArray[i] = i + 23;
+        }
+
+        // Pegando a div para mostrar os dados
+        let saida = document.getElementById("array");
+
+        // Imprimindo os elementos no navegador
+        for (let i = 0; i < meuArray.length; i++) {
+            saida.innerHTML += "Posição " + i + ": " + meuArray[i] + "<br>";
+        }
+    </script>
+</body>
+</html>
