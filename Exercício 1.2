@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nomes e Sobrenome</title>
+</head>
+<body>
+    <h1>Nomes completos</h1>
+    <div id="nomecompleto"></div>
+
+    <script>
+        // Array com nomes
+        const nomes = ['Dino', 'Baby', 'Charlote'];
+
+        // Usando map para adicionar o sobrenome
+        const nomesCompletos = nomes.map(function(nome) {
+            return nome + " da Silva Sauro";
+        });
+
+        // Exibindo no navegador
+        const saida = document.getElementById("nomecompleto");
+
+        for (let i = 0; i < nomesCompletos.length; i++) {
+            saida.innerHTML += nomesCompletos[i] + "<br>";
+        }
+    </script>
+</body>
+</html>
