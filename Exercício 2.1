@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produtos com Desconto</title>
+</head>
+<body>
+    <h1>Lista de Peças</h1>
+    <div id="produtos"></div>
+
+    <script>
+        // Array com produtos
+        const inventario = [
+            { nome: 'Caixa de direção hidrálica  FIAT ', preco: 1950.00 },
+            { nome: 'Caixa de direção elétrica FIAT ', preco: 1200.00 },
+            { nome: 'Caixa de direção mecânica FIAT', preco: 650.00 }
+        ];
+
+        // Função para calcular desconto de 15%
+        function DescontoCliente(preco) {
+            return preco * 0.85; // 15% de desconto
+        }
+
+        // Mostrar no navegador
+        const saida = document.getElementById("produtos");
+
+        inventario.forEach(function(produto) {
+            const precoComDesconto = DescontoCliente(produto.preco);
+            saida.innerHTML += `
+                <p>
+                    <strong>${produto.nome}</strong><br>
+                    Preço original: R$ ${produto.preco.toFixed(2)}<br>
+                    Preço com desconto de 15% : <span style="color: blue;">R$ ${precoComDesconto.toFixed(2)}</span>
+                </p>
+            `;
+        });
+    </script>
+</body>
+</html>
